@@ -3,7 +3,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 /* Base Styles */
-html, body {
+html,
+body {
   scrollbar-color: rgba(0, 0, 0, 0.6) rgba(0, 0, 0, 0.2);
   scrollbar-width: thin;
   margin: 0;
@@ -18,7 +19,12 @@ html, body {
 }
 
 /* Text Elements */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Fredoka One", sans-serif;
 }
 
@@ -27,13 +33,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Fontawesome */
-a svg, span svg {
+a svg,
+span svg {
   margin-right: 5px;
   font-size: 1.5em;
 }
 
 /* Colours */
-a, h1, h2, h3, h4, h5 {
+a,
+h1,
+h2,
+h3,
+h4,
+h5 {
   text-decoration: none;
   color: #e26682;
 }
@@ -58,14 +70,13 @@ a, h1, h2, h3, h4, h5 {
   right: 0;
   bottom: 0;
   filter:
-    blur(10px) 
-    brightness(0.33) 
-    drop-shadow(0px 0px 32px rgba(0, 0, 0, 1.0));
+    blur(10px) brightness(0.33) drop-shadow(0px 0px 32px rgba(0, 0, 0, 1.0));
 
   margin: -64px;
 }
+
 @media only screen and (max-width: 650px) {
-  .content{ 
+  .content {
     top: 0px;
     bottom: 0px;
     width: 100%;
@@ -82,6 +93,7 @@ a, h1, h2, h3, h4, h5 {
     border-radius: 8px;
   }
 }
+
 @media only screen and (min-width: 1250px) {
   .content {
     max-width: 1000px
@@ -112,7 +124,8 @@ a, h1, h2, h3, h4, h5 {
   border-radius: 50%;
 }
 
-.layout header h1, .layout header p {
+.layout header h1,
+.layout header p {
   margin: 4px 0 4px 0;
 }
 
@@ -162,6 +175,7 @@ a, h1, h2, h3, h4, h5 {
 .layout section .project .details .links {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .layout section .project .details .links a,
@@ -183,13 +197,33 @@ a, h1, h2, h3, h4, h5 {
   max-height: 1px;
   margin-top: 24px;
   margin-bottom: 24px;
-  background-color: rgba(255,255,255,0.333);
+  background-color: rgba(255, 255, 255, 0.333);
 }
 
+/* Adjustments for small screens. */
+@media only screen and (max-width: 450px) {
+  .layout header {
+    flex-direction: column;
+    text-align: center;
+  }
 
+  .layout section .project {
+    flex-direction: column;
+  }
+
+  .layout section .project img {
+    display: none;
+  }
+
+  .layout section .project .details .links {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
 /* Only appears in Edge and IE. */
-:-ms-lang(x), .layout {
-  background-color: rgba(0,0,0,0.8);
+:-ms-lang(x),
+.layout {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* Button */
@@ -209,15 +243,41 @@ a, h1, h2, h3, h4, h5 {
   filter: brightness(75%);
 }
 
-.github     {background-color: #292d32;}
-.bitbucket  {background-color: #0747a6;}
-.reddit     {background-color: #ff4500;}
-.steam      {background-color: #171a21;}
-.twitter    {background-color: #1da1f2;}
-.discord    {background-color: #7289da;}
-.youtube    {background-color: #ff0000;}
-.senko      {background-color: #f39800;}
-.nyrm       {background-color: #5dadec;}
+.github {
+  background-color: #292d32;
+}
+
+.bitbucket {
+  background-color: #0747a6;
+}
+
+.reddit {
+  background-color: #ff4500;
+}
+
+.steam {
+  background-color: #171a21;
+}
+
+.twitter {
+  background-color: #1da1f2;
+}
+
+.discord {
+  background-color: #7289da;
+}
+
+.youtube {
+  background-color: #ff0000;
+}
+
+.senko {
+  background-color: #f39800;
+}
+
+.nyrm {
+  background-color: #5dadec;
+}
 
 /* CSS for the avatar animation. */
 #avatar {
@@ -233,18 +293,41 @@ a, h1, h2, h3, h4, h5 {
 }
 
 @keyframes wiggle {
-  from {transform: rotate(0deg);}
-  90%  {transform: rotate(0deg);}
-  92%  {transform: rotate(1deg);}
-  94%  {transform: rotate(-1deg);}
-  96%  {transform: rotate(1deg);}
-  98%  {transform: rotate(-1deg);}
-  100% {transform: rotate(0deg);}
-  to   {transform: rotate(0deg);}
+  from {
+    transform: rotate(0deg);
+  }
+
+  90% {
+    transform: rotate(0deg);
+  }
+
+  92% {
+    transform: rotate(1deg);
+  }
+
+  94% {
+    transform: rotate(-1deg);
+  }
+
+  96% {
+    transform: rotate(1deg);
+  }
+
+  98% {
+    transform: rotate(-1deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
 }
 
 .clicked {
-opacity: 1;
+  opacity: 1;
   animation: clicked 0.15s linear;
   animation-delay: 0s;
   animation-play-state: running;
@@ -252,8 +335,19 @@ opacity: 1;
 }
 
 @keyframes clicked {
-  0%    {transform: rotate(0deg);}
-  25%   {transform: scale(1.025) rotate(1deg);}
-  50%   {transform: scale(1.025) rotate(-1deg);}
-  100%  {transform: rotate(0deg);}
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: scale(1.025) rotate(1deg);
+  }
+
+  50% {
+    transform: scale(1.025) rotate(-1deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
 }
