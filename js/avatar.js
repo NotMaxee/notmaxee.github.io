@@ -6,6 +6,8 @@ var clicked = false;
 var img = new Image();
 img.src = "img/avatar/clicked.gif";
 
+var audio = new Audio("../data/constanze.wav");
+
 function click() {
   if (clicked) {
     return;
@@ -18,6 +20,7 @@ function click() {
 
   avatar.src = "img/avatar/clicked.gif"
   avatar.classList.add("clicked");
+  audio.play();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
