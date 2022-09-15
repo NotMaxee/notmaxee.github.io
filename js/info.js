@@ -7,4 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (age != undefined) {
     age.innerHTML = year - 1997;
   }
+
+  let currentYear = document.getElementById("current-year");
+  currentYear.innerHTML = year;
 });
