@@ -151,10 +151,19 @@ h5 {
   margin-bottom: 16px;
 }
 
-.layout section .project img {
+.layout section .project .icon {
   height: 96px;
   width: 96px;
   margin-right: 16px;
+  flex-shrink: 0;
+}
+
+.layout section .project .icon.small {
+  display: none;
+  height: 24px;
+  width: 24px;
+  margin-bottom: -4px;
+  margin-right: 8px;
   flex-shrink: 0;
 }
 
@@ -207,6 +216,11 @@ h5 {
 
 /* Adjustments for small screens. */
 @media only screen and (max-width: 450px) {
+  .separator {
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+  
   .layout header {
     flex-direction: column;
     text-align: center;
@@ -220,9 +234,17 @@ h5 {
     display: none;
   }
 
+  .layout section .project .icon.small {
+    display: inline-block;
+  }
+
   .layout section .project .details .links {
     flex-direction: column;
     flex-wrap: wrap;
+  }
+
+  .layout section .project .details .links a:not(:last-child) {
+    margin-bottom: 4px;
   }
 }
 /* Only appears in Edge and IE. */
